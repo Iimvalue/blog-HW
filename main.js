@@ -80,11 +80,17 @@ function displayPosts(posts) {
     const commentInput = document.createElement("input");
     commentInput.type = "text";
     commentInput.className = "form-control me-2";
+    localStorage.getItem("username") == null
+      ? commentInput.disabled = true
+      : "";
     commentInput.placeholder = "Add a comment";
     const submitButton = document.createElement("button");
     submitButton.type = "submit";
     submitButton.className = "btn btn-primary";
     submitButton.innerText = "Post";
+    localStorage.getItem("username") == null
+      ? submitButton.classList.add("disabled")
+      : "";
     commentForm.appendChild(commentInput);
     commentForm.appendChild(submitButton);
     commentForm.addEventListener("submit", function (event) {
