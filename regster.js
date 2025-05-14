@@ -32,7 +32,7 @@ async function crateUser(user) {
     const data = await response.json();
     console.log("تم التسجيل", data);
     alert("تم التسجيل بنجاح");
-    window.location.href = "/login.html";
+    window.location.href = "login.html";
   } catch (error) {
     console.log("error regster", error);
   }

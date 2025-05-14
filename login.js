@@ -22,7 +22,7 @@ async function login() {
       localStorage.setItem("id", userExist.id)
       localStorage.setItem("username", userExist.username);
       alert("تم تسجيل الدخول");
-      window.location.href = "/index.html";
+      window.location.href = "index.html";
     } else {
       alert("username or passowrd err");
     }
