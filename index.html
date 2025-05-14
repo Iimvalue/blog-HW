@@ -13,32 +13,52 @@
     <title>Home page</title>
   </head>
   <body>
-    <nav class="navbar bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand">Navbar</a>
-        <div>
-          <button
-            onclick="login()"
-            id="login-link"
-            class="btn btn-success d-none"
-          >
-            <a style="text-decoration: none; color: white" href="login.html"
-              >Login</a
-            >
-          </button>
-          <button onclick="logout()" id="logout-link" class="d-none">
-            logOut
-          </button>
-        </div>
+
+     <!-- Navbar -->
+  <nav class="navbar bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <h4 id="user-nav"></h4>
+      <div>
+        <a href="login.html" class="btn btn-success d-none" id="login-link">
+          <i class="bi bi-box-arrow-in-right"></i> Login
+        </a>
+        <button onclick="logout()" class="btn btn-danger d-none" id="logout-link">
+          <i class="bi bi-box-arrow-right"></i> Logout
+        </button>
       </div>
-    </nav>
-    <section class="d-flex flex-column w-50 gap-2 m-auto">
-      <h2>add post</h2>
-      <input placeholder="add imageUrl" type="text" id="imageUrl" required />
-      <input placeholder="add text" type="text" id="postText" />
-      <button id="submit">post</button>
-    </section>
-    <section id="posts-container"></section>
+    </div>
+  </nav>
+
+  <!-- Add Post Section -->
+  <section class="container mt-4">
+    <div class="card w-50 mx-auto">
+      <div class="card-header">
+        <h2>Add Post</h2>
+      </div>
+      <div class="card-body">
+        
+          <div class="mb-3">
+            <label for="imageUrl" class="form-label">Image URL</label>
+            <input type="text" class="form-control" id="imageUrl" placeholder="Add image URL" required>
+          </div>
+          <div class="mb-3">
+            <label for="postText" class="form-label">Post Text</label>
+            <input type="text" class="form-control" id="postText" placeholder="Add text">
+          </div>
+          <button class="btn btn-primary" id="submit">
+            <i class="bi bi-plus"></i> Post
+          </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Posts Container -->
+  <section class="container mt-4" id="posts-container">
+    <div class="row">
+      <!-- Posts will be added here dynamically -->
+    </div>
+  </section>
     <script src="main.js"></script>
     <script>
       const u = localStorage.getItem("username");

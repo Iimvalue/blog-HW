@@ -1,4 +1,4 @@
-const apiUrl = "https://68225dacb342dce8004e0d7c.mockapi.io";
+const apiUrl = "https://6823b82b65ba05803397b364.mockapi.io";
 let username = document.getElementById("username-input");
 let password = document.getElementById("password-input");
 let confirmPassword = document.getElementById("confirm-password");
@@ -11,7 +11,7 @@ submitButton.addEventListener("click", async (e) => {
 });
 async function crateUser(user) {
   try {
-    const checkUser = await fetch(`${apiUrl}/login?username=${user.username}`);
+    const checkUser = await fetch(`${apiUrl}/users?username=${user.username}`);
     if (checkUser.ok) {
       alert("اسم المستخدم موجود");
       return;
@@ -21,7 +21,7 @@ async function crateUser(user) {
       return;
     }
     // post create user
-    const response = await fetch(`${apiUrl}/login`, {
+    const response = await fetch(`${apiUrl}/users`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",

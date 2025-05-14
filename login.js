@@ -1,4 +1,4 @@
-const apiUrl = "https://68225dacb342dce8004e0d7c.mockapi.io";
+const apiUrl = "https://6823b82b65ba05803397b364.mockapi.io";
 let username = document.getElementById("username-input");
 let password = document.getElementById("password-input");
 let submitButton = document.getElementById("submit");
@@ -12,13 +12,14 @@ submitButton.addEventListener("click", async (e) => {
 async function login() {
   console.log(username, password);
   try {
-    const res = await fetch(`${apiUrl}/login`);
+    const res = await fetch(`${apiUrl}/users`);
     const users = await res.json();
     const userExist = users.find(
       (u) => u.username === username.value && u.password === password.value
     );
     console.log(userExist);
     if (userExist) {
+      localStorage.setItem("id", userExist.id)
       localStorage.setItem("username", userExist.username);
       alert("تم تسجيل الدخول");
       window.location.href = "/index.html";
